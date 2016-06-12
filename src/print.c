@@ -96,7 +96,7 @@ dbg_print_char(int format, FILE *target, char data,  int sep)
     if (sep)
 #endif /* EOL_HANDLING */
         if (!columnar && (sep != -1))
-            fprintf(target, "%c", 44);
+            fprintf(target, "%c", SEPARATOR);
 
     return(0);
 }
@@ -128,7 +128,7 @@ dbg_print_charp(int format, FILE *target, char *data, int len, int sep)
     if (sep)
 #endif /* EOL_HANDLING */
         if (!columnar && (sep != -1))
-            fprintf(target, "%c", 44);
+            fprintf(target, "%c", SEPARATOR);
 
     return(0);
 }
@@ -172,7 +172,7 @@ dbg_print_long(int format, FILE *target, long data, int len, int sep)
     if (sep)
 #endif /* EOL_HANDLING */
         if (!columnar && (sep != -1))
-            fprintf(target, "%c", 44);
+            fprintf(target, "%c", SEPARATOR);
 
     return(0);
 }
@@ -205,7 +205,7 @@ dbg_print_longp(int format, FILE *target, long * data, int len, int sep)
     if (sep)
 #endif /* EOL_HANDLING */
         if (!columnar && (sep != -1))
-            fprintf(target, "%c", 44);
+            fprintf(target, "%c", SEPARATOR);
 
     return(0);
 }
