@@ -32,7 +32,11 @@ Changes with this copy :
         
         (for all SSBM tables)
         dbgen -s 1 -T a
-        
+
+
+	python dbgen.py
+	this will generate ssbRaw.csv:
+		combining part.csv and customer.csv  with the lineorder.csv
 These commands should generate the following files: customer.tbl  date.tbl      lineorder.tbl part.tbl      supplier.tbl
 
 You can easily generate larger files by modifying the scale parameter (-s).
