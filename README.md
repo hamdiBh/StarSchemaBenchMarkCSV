@@ -6,24 +6,28 @@ described in the following paper:
 Patrick O'Neil, Elizabeth (Betty) O'Neil and Xuedong Chen. "The Star Schema Benchmark," Online Publication of Database Generation program., January 2007.
 http://www.cs.umb.edu/~poneil/StarSchemaB.pdf
 
+Changes with this copy : 
+
+        - Generating csv files instead of tbl.
+        - Changing the SEPARATOR to comme instead of |.
 
 # Usage
 
         make
         
-        (customer.tbl)
+        (customer.csv)
         dbgen -s 1 -T c
         
-        (part.tbl)
+        (part.csv)
         dbgen -s 1 -T p
         
-        (supplier.tbl)
+        (supplier.csv)
         dbgen -s 1 -T s
         
-        (date.tbl)
+        (date.csv)
         dbgen -s 1 -T d
         
-        (fact table lineorder.tbl)
+        (fact table lineorder.csv)
         dbgen -s 1 -T l
         
         (for all SSBM tables)
