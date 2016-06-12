@@ -8,7 +8,7 @@ http://www.cs.umb.edu/~poneil/StarSchemaB.pdf
 
 Changes with this copy : 
 
-        - Generating csv files instead of tbl.
+        - Generating csv files instead of csv.
         - Changing the SEPARATOR to comme instead of |.
 
 # Usage
@@ -37,7 +37,7 @@ Changes with this copy :
 	python dbgen.py
 	this will generate ssbRaw.csv:
 		combining part.csv and customer.csv  with the lineorder.csv
-These commands should generate the following files: customer.tbl  date.tbl      lineorder.tbl part.tbl      supplier.tbl
+These commands should generate the following files: customer.csv  date.csv      lineorder.csv part.csv      supplier.csv
 
 You can easily generate larger files by modifying the scale parameter (-s).
 
@@ -46,7 +46,7 @@ To generate the refresh (insert/delete) data set:
 
         dbgen -s 1 -r 5 -U 4
 
-where "-r 5" specifies refreshin fact n/10000 "-U 4" specifies 4 segments for deletes and inserts. This will create the files create delete.[1-4] and lineorder.tbl.u[1-4] with refreshing fact 0.05%.
+where "-r 5" specifies refreshin fact n/10000 "-U 4" specifies 4 segments for deletes and inserts. This will create the files create delete.[1-4] and lineorder.csv.u[1-4] with refreshing fact 0.05%.
 
 
 # Suitability
