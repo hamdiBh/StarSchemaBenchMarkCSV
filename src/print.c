@@ -286,6 +286,7 @@ pr_order(order_t *o, int mode)
     PR_MONEY(fp_o, o->totalprice);
     PR_STR(fp_o, o->odate, DATE_LEN);
     PR_STR(fp_o, o->opriority, O_OPRIO_LEN);
+    PR_STR(fp_o, o->city,CITY_FIX);
     PR_STR(fp_o, o->clerk, O_CLRK_LEN);
     PR_INT(fp_o, o->spriority);
     PR_VSTR_LAST(fp_o, o->comment,
@@ -324,18 +325,22 @@ pr_line(order_t *o, int mode)
         PR_INT(fp_l, o->lineorders[i].custkey);
         PR_INT(fp_l, o->lineorders[i].partkey);
         PR_INT(fp_l, o->lineorders[i].suppkey);
-        PR_STR(fp_l, o->lineorders[i].orderdate, DATE_LEN);
-        PR_STR(fp_l, o->lineorders[i].opriority, O_OPRIO_LEN);
-        PR_INT(fp_l, o->lineorders[i].ship_priority);
+//	PR_STR(fp_l, o->lineorders[i].city,CITY_FIX);
+//	PR_STR(fp_l, o->lineorders[i].nation_name, C_NATION_NAME_LEN);
+//	PR_STR(fp_l, o->lineorders[i].region_name, C_REGION_NAME_LEN);
+
+//        PR_STR(fp_l, o->lineorders[i].orderdate, DATE_LEN);
+//        PR_STR(fp_l, o->lineorders[i].opriority, O_OPRIO_LEN);
+//        PR_INT(fp_l, o->lineorders[i].ship_priority);
         PR_INT(fp_l, o->lineorders[i].quantity);
         PR_INT(fp_l, o->lineorders[i].extended_price);
         PR_INT(fp_l, o->lineorders[i].order_totalprice);
-        PR_INT(fp_l, o->lineorders[i].discount);
-        PR_INT(fp_l, o->lineorders[i].revenue);
-        PR_INT(fp_l, o->lineorders[i].supp_cost);
-        PR_INT(fp_l, o->lineorders[i].tax);
-        PR_STR(fp_l, o->lineorders[i].commit_date, DATE_LEN);
-        PR_STR(fp_l, o->lineorders[i].shipmode, O_SHIP_MODE_LEN);
+//        PR_INT(fp_l, o->lineorders[i].discount);
+//        PR_INT(fp_l, o->lineorders[i].revenue);
+//        PR_INT(fp_l, o->lineorders[i].supp_cost);
+//        PR_INT(fp_l, o->lineorders[i].tax);
+//        PR_STR(fp_l, o->lineorders[i].commit_date, DATE_LEN);
+//        PR_STR(fp_l, o->lineorders[i].shipmode, O_SHIP_MODE_LEN);
         PR_END(fp_l);
     }
 
@@ -366,7 +371,8 @@ pr_line(order_t *o, int mode)
         PR_INT(fp_l, o->l[i].partkey);
         PR_INT(fp_l, o->l[i].suppkey);
         PR_INT(fp_l, o->l[i].lcnt);
-        PR_INT(fp_l, o->l[i].quantity);
+     	PR_STR(fp_l, o->l[i].city,CITY_FIX);
+	PR_INT(fp_l, o->l[i].quantity);
         PR_MONEY(fp_l, o->l[i].eprice);
         PR_MONEY(fp_l, o->l[i].discount);
         PR_MONEY(fp_l, o->l[i].tax);
@@ -417,18 +423,18 @@ pr_part(part_t *part, int mode)
 
     PR_STRT(p_fp);
     PR_INT(p_fp, part->partkey);
-    PR_VSTR(p_fp, part->name,
-            (columnar)?(long)P_NAME_LEN:part->nlen);
-    PR_STR(p_fp, part->mfgr, P_MFG_LEN);
+//    PR_VSTR(p_fp, part->name,
+//            (columnar)?(long)P_NAME_LEN:part->nlen);
+//    PR_STR(p_fp, part->mfgr, P_MFG_LEN);
     PR_STR(p_fp, part->category, P_CAT_LEN);
     PR_STR(p_fp, part->brand, P_BRND_LEN);
 
     /*need to handle color*/
-    PR_VSTR(p_fp, part->color,(columnar)?(long)P_COLOR_LEN:part->clen);
-    PR_VSTR(p_fp, part->type,
-            (columnar)?(long)P_TYPE_LEN:part->tlen);
-    PR_INT(p_fp, part->size);
-    PR_STR(p_fp, part->container, P_CNTR_LEN);
+  //  PR_VSTR(p_fp, part->color,(columnar)?(long)P_COLOR_LEN:part->clen);
+  //  PR_VSTR(p_fp, part->type,
+  //          (columnar)?(long)P_TYPE_LEN:part->tlen);
+  //  PR_INT(p_fp, part->size);
+  //  PR_STR(p_fp, part->container, P_CNTR_LEN);
     PR_END(p_fp);
     return(0);
 }
