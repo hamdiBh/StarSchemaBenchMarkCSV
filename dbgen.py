@@ -16,7 +16,7 @@ try:
 
         row[2]= linecache.getline('customer.csv', x-1).replace(",\n","")
         row[3]= linecache.getline('part.csv', y-1).replace(",\n","")
-        print(", ".join(str(elt) for elt in row))
+	print(", ".join(str(elt) for elt in row)[:-2])
 
 finally:
     f.close()
